@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '../components/button';
 import GulpGraph from '../components/graph';
+import GulpSource from '../components/source';
 
 const HeroContainer = styled.div`
   max-width: var(--max-width-large);
@@ -39,8 +40,8 @@ const Hero = ({ props }) => {
         <ViewSource>
           <Button title='View Source'/>
         </ViewSource>
-        <GulpGraph />
-        {/* <GulpSource /> */}
+        {/* <GulpGraph /> */}
+        <GulpSource />
       </HeroAnimation>
     </HeroContainer>
   )

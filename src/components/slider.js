@@ -1,14 +1,16 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import Donate from './donate';
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 import stickerMule from '../assets/st-mule.png';
 import blaine from '../assets/blaine.png';
+
 import arrowLeft from '../assets/arrow-left.svg';
 import arrowRight from '../assets/arrow-right.svg';
+import arrowLeftDark from '../assets/arrow-left-dark.svg';
+import arrowRightDark from '../assets/arrow-right-dark.svg';
 
 // theme it - light and dark
 const SliderContainer = styled.div`
@@ -22,7 +24,7 @@ const SliderContainer = styled.div`
     margin-left: var(--hugest);
 
     img {
-      width: var(--huge);
+      width: ${props => props.theme.imageWidth};
       max-width: 100%;
       border-radius: ${props => props.theme.borderRadius};
     }
@@ -31,23 +33,28 @@ const SliderContainer = styled.div`
   button {
     :first-child {
       border-right: 1px solid ${props => props.theme.color};
-      // background: url('${props => props.theme.buttonLeft}') no-repeat;
+      background: url('${props => props.theme.buttonLeft}') no-repeat;
+      background-position: 0% 40%;
     }
 
     :last-child {
-      // background: url('${props => props.theme.buttonRight}') no-repeat;
+      background: url('${props => props.theme.buttonRight}') no-repeat;
+      background-position: 100% 40%;
     }
   }
 `
 const Buttons = styled.div`
   position: absolute;
-  top: 4.5vh;
+  top: 6vh;
+  left: 1vw;
+
 
   button {
     background-color: transparent;
     border: none;
     outline: none;
-    padding: var(--small);
+    width: var(--large);
+    height: var(--large);
   }
 `
 
@@ -57,14 +64,18 @@ SliderContainer.defaultProps = {
     color: 'var(--light-gray)',
     borderRadius: '0',
     buttonLeft: arrowLeft,
-    buttonRight: arrowRight
+    buttonRight: arrowRight,
+    imageWidth: 'var(--huge)'
   }
 }
 
 const theme = {
   background: 'var(--light-gray)',
   color: 'var(--black)',
-  borderRadius: '100%'
+  borderRadius: '100%',
+  buttonLeft: arrowLeftDark,
+  buttonRight: arrowRightDark,
+  imageWidth: '3.5rem'
 }
 
 const responsive = {
@@ -78,12 +89,8 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
   const { carouselState: { currentSlide } } = rest;
   return (
     <Buttons>
-      <button className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()}>
-        <img src={arrowLeft} />
-      </button>
-      <button onClick={() => next()}>
-        <img src={arrowRight} />
-      </button>
+      <button className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
+      <button onClick={() => next()} />
     </Buttons>
   );
 };

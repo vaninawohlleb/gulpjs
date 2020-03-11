@@ -18,8 +18,8 @@ const SocialsContainer = styled.ul`
 const Socials = ({ props }) => {
   return (
     <SocialsContainer>
-      <li><a href="#"><img src={twitter} alt="" /></a></li>
-      <li><a href="#"><img src={medium} alt="" /></a></li>
+      <li><a href="/"><img src={twitter} alt="twitter" /></a></li>
+      <li><a href="/"><img src={medium} alt="medium" /></a></li>
     </SocialsContainer>
   )
 }

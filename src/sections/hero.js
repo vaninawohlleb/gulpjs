@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../components/button';
-import GulpSource from '../components/source';
 import GulpGraph from '../components/graph';
 
 const HeroContainer = styled.div`

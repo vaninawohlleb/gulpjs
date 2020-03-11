@@ -40,8 +40,8 @@ const Hero = ({ props }) => {
         <ViewSource>
           <Button title='View Source'/>
         </ViewSource>
-        {/* <GulpGraph /> */}
-        <GulpSource />
+        <GulpGraph />
+        {/* <GulpSource /> */}
       </HeroAnimation>
     </HeroContainer>
   )

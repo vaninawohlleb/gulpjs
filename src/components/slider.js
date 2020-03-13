@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
+import Donate from './donate.js';
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -12,16 +13,19 @@ import arrowRight from '../assets/arrow-right.svg';
 import arrowLeftDark from '../assets/arrow-left-dark.svg';
 import arrowRightDark from '../assets/arrow-right-dark.svg';
 
-// theme it - light and dark
 const SliderContainer = styled.div`
   position: relative;
-  width: 44vw;
-  background: ${props => props.theme.background};
   color: ${props => props.theme.color};
+  display: grid;
+  grid-template-columns: 9vw 36vw 19vw;
+  grid-template-areas: "nav content footer";
+  align-items: center;
 
   .react-multi-carousel-list {
-    height: 18vh;
-    margin-left: var(--hugest);
+    background: ${props => props.theme.background};
+    grid-area: content;
+    min-height: 18vh;
+    padding: 0 var(--tiny);
 
     img {
       width: ${props => props.theme.imageWidth};
@@ -30,31 +34,32 @@ const SliderContainer = styled.div`
     }
   }
 
-  button {
-    :first-child {
-      border-right: 1px solid ${props => props.theme.color};
-      background: url('${props => props.theme.buttonLeft}') no-repeat;
-      background-position: 0% 40%;
+  .buttons {
+    grid-area: nav;
+    background: ${props => props.theme.background};
+    min-height: 18vh;
+    padding: 0 var(--tiny);
+    display: flex;
+    align-items: inherit;
+
+     button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      width: 48px;
+      height: 48px;
+
+      :first-child {
+        border-right: 1px solid ${props => props.theme.color};
+        background: url('${props => props.theme.buttonLeft}') no-repeat;
+        background-position: 0% 40%;
+      }
+
+      :last-child {
+        background: url('${props => props.theme.buttonRight}') no-repeat;
+        background-position: 100% 40%;
+      }
     }
-
-    :last-child {
-      background: url('${props => props.theme.buttonRight}') no-repeat;
-      background-position: 100% 40%;
-    }
-  }
-`
-const Buttons = styled.div`
-  position: absolute;
-  top: 6vh;
-  left: 1vw;
-
-
-  button {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    width: var(--large);
-    height: var(--large);
   }
 `
 
@@ -88,10 +93,10 @@ const responsive = {
 const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
   const { carouselState: { currentSlide } } = rest;
   return (
-    <Buttons>
+    <div className="buttons">
       <button className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
       <button onClick={() => next()} />
-    </Buttons>
+    </div>
   );
 };
 
@@ -111,7 +116,7 @@ const Slider = (props) => {
           <div><img src={stickerMule} alt="sticker-mule" /></div>
           <div><img src={stickerMule} alt="sticker-mule" /></div>
         </Carousel>
-        {/* <Donate /> */}
+        <Donate />
       </SliderContainer>
     )
   } return (

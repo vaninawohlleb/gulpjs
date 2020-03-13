@@ -89,7 +89,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: calc(1.4rem + .1vw);
     line-height: calc(1.5rem + .2vw);
     color: var(--purple);
-    margin-top: 0;
   }
 
   h4, .uppercase {

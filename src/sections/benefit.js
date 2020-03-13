@@ -8,11 +8,20 @@ const BenefitContainer = styled.div`
   padding: var(--medium);
 `
 
+const Heading = styled.div`
+  display: flex;
+
+  img {
+    margin-right: var(--tiny);
+  }
+`
 const Benefit = (props) => {
   return (
     <BenefitContainer>
-      <img src={props.icon} alt={props.title} />
-      <h3>{props.title}</h3>
+      <Heading>
+        <img src={props.icon} alt={props.title} />
+        <h3>{props.title}</h3>
+      </Heading>
       <p>{props.text}</p>
     </BenefitContainer>
   )

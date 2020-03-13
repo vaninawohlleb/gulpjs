@@ -10,6 +10,10 @@ const PluginContainer = styled.div`
   grid-template-columns: 25vw 60vw;
   align-items: center;
   grid-column-gap: var(--max-width-tiny);
+
+  h3 {
+    margin-top: 0;
+  }
 `
 const PluginText = styled.div`
   p {

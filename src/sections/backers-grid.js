@@ -11,9 +11,9 @@ const BackersGridContainer = styled.div`
 const Backers = (props) => {
   return (
     <BackersGridContainer>
-      <Tier text='Make a custom one time or recurring contribution to support this collective.' buttonTitle='donate once ' />
-      <Tier text='Support us with a monthly donation and help us continue our activities.' buttonTitle='once a month' />
-      <Tier text='Become a sponsor and get your logo on our README with a link to your site.' buttonTitle='unknown tier3' />
+      <Tier title="Donate once" text='Make a custom one time or recurring contribution to support this collective.' buttonTitle='donate' />
+      <Tier title="Donate once a month"  text='Support us with a monthly donation and help us continue our activities.' buttonTitle='donate' />
+      <Tier title="Unknown tier 3" text='Become a sponsor and get your logo on our README with a link to your site.' buttonTitle='donate' />
     </BackersGridContainer>
   )
 }

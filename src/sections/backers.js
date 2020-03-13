@@ -10,6 +10,10 @@ const BackersContainer = styled.div`
   grid-template-columns: 25vw 51vw;
   align-items: center;
   grid-column-gap: var(--huge);
+
+  h3 {
+    margin-top: 0;
+  }
 `
 
 const BackersText = styled.div`

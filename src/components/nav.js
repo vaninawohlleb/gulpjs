@@ -8,6 +8,16 @@ const NavigationContainer = styled.ul`
   grid-template-columns: var(--hugest) var(--xxl) var(--large) var(--xxl) var(--hugest);
   grid-column-gap: var(--small);
   align-items: center;
+
+  li {
+    text-align: center;
+
+    &.button-like {
+      padding: var(--tiny);
+      border: 2px solid white;
+    }
+  }
+
 `
 const Nav = ({ props }) => {
   return (

@@ -5,13 +5,21 @@ import GulpGraph from '../components/graph';
 import GulpSource from '../components/source';
 
 const HeroContainer = styled.div`
-  max-width: var(--max-width-large);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 35vw 40vw;
-  grid-column-gap: var(--xxl);
-  min-height: 90vh;
+  padding: var(--big);
   align-items: center;
+
+  @media(min-width: 768px) {
+    min-height: 90vh;
+    max-width: var(--max-width-mid);
+  }
+
+  @media(min-width: 1200px) {
+    max-width: var(--max-width-large);
+    display: grid;
+    grid-template-columns: 44% 49%;
+    grid-column-gap: var(--xxl);
+  }
 `
 const HeroText = styled.div`
 
@@ -21,7 +29,14 @@ p {
 }
 `
 const HeroAnimation = styled.div`
+  display: none;
 
+  img {
+    max-width: 100%;
+  }
+  @media(min-width: 768px) {
+    display: block;
+  }
 `
 
 const ViewSource = styled.div`

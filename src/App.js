@@ -104,7 +104,6 @@ const Header = styled.header`
   grid-template-columns: 10% 80% 10%;
 `
 
-
 const Main = styled.main`
  
 `
@@ -115,9 +114,18 @@ const Footer = styled.footer`
   position: relative;
   padding: var(--big);
   display: grid;
-  grid-template-columns: 40vw 30vw 10vw;
-  grid-template-areas: ". first last";
-  grid-column-gap: var(--hugest);
+  grid-template-areas: "first last";
+  grid-template-columns: 50% 50%;
+
+  @media(min-width: 768px) {
+    grid-template-columns: 20% 45% 20%;
+    grid-template-areas: ". first last";
+    grid-column-gap: var(--big);
+  }
+
+  @media(min-width: 1200px) {
+    grid-template-columns: 56% 30% 10%;
+  }
 
   > ul {
     grid-area: first;
@@ -125,6 +133,12 @@ const Footer = styled.footer`
 
   > a {
     grid-area: last;
+    text-align: end;
+    margin-top: var(--big);
+
+    @media(min-width: 768px) {
+      margin-top: 0;
+    }
   }
 `
 

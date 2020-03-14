@@ -3,21 +3,48 @@ import styled from 'styled-components';
 import PluginsGrid from './plugins-grid';
 
 const PluginContainer = styled.div`
-  max-width: var(--max-width-large);
   margin: 0 auto;
-  padding: var(--huge) 0;
-  display: grid;
-  grid-template-columns: 25vw 60vw;
+  padding: var(--big);
   align-items: center;
-  grid-column-gap: var(--max-width-tiny);
+
+  @media(min-width: 768px) {
+    max-width: var(--max-width-mid);
+    display: grid;
+    grid-template-columns: 42% 58%;
+    grid-column-gap: var(--big);
+  }
+  
+  @media(min-width: 1200px) {
+    padding: var(--huge) var(--big);
+    max-width: var(--max-width-large);
+    grid-template-columns: 30% 54%;
+    grid-column-gap: var(--max-width-tiny);
+  }
 
   h3 {
     margin-top: 0;
   }
 `
 const PluginText = styled.div`
+  align-self: baseline;
+  flex-direction: column;
+  align-items: top;
+
+  h3 {
+    text-align: center;
+
+    @media(min-width: 768px) {
+      text-align: left;
+    }
+  }
+
   p {
     margin-bottom: 0;
+    display: none;
+
+    @media(min-width: 768px) {
+      display: block;
+    }
   }
 `
 

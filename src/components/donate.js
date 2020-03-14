@@ -5,6 +5,7 @@ const DonateContainer = styled.div`
   background: var(--red);
   min-height: 18vh;
   padding: 0 var(--medium);
+  grid-area: footer;
   
   // h2 {
   //   margin: 0;

@@ -3,13 +3,21 @@ import styled from 'styled-components';
 import BackersGrid from './backers-grid';
 
 const BackersContainer = styled.div`
-  max-width: var(--max-width-large);
   margin: 0 auto;
-  padding: var(--huge) 0;
-  display: grid;
-  grid-template-columns: 25vw 51vw;
-  align-items: center;
-  grid-column-gap: var(--huge);
+  padding: var(--big);
+  
+  @media(min-width: 768px) {
+    max-width: var(--max-width-mid);
+    display: grid;
+    align-items: center;
+  }
+
+  @media(min-width: 1200px) {
+    padding: var(--huge) var(--big);
+    max-width: var(--max-width-large);
+    grid-template-columns: 31% 62%;
+    grid-column-gap: var(--huge);
+  }
 
   h3 {
     margin-top: 0;

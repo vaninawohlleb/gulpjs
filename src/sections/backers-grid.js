@@ -7,9 +7,18 @@ import rocket from '../assets/rocket.svg';
 import beer from '../assets/beer.svg';
 
 const BackersGridContainer = styled.div`
+  margin-top: var(--big);
   display: grid;
-  grid-template-columns: repeat(3, 27%);
-  grid-column-gap: var(--huge);
+  grid-row-gap: var(--big);
+  
+  @media(min-width: 768px) {
+    grid-template-columns: repeat(3, 26%);
+    grid-column-gap: var(--huge);
+  }
+
+  @media(min-width: 1200px) {
+    margin-top: 0;
+  }
 `
 
 const Backers = (props) => {

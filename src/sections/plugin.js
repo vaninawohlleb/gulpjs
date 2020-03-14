@@ -6,9 +6,13 @@ const PluginContainer = styled.div`
   background: white;
   padding: var(--small);
   display: flex;
-  height: 24.5vh;
+  width: 100%;
   flex-direction: column;
   justify-items: center;
+
+  @media(min-width: 1200px) {
+    padding: var(--medium) var(--small);
+  }
 
   img {
     max-height: 100px;

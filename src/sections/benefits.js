@@ -7,13 +7,24 @@ import timer from '../assets/timer.svg';
 import atom from '../assets/atom.svg';
 
 const BenefitsContainer = styled.div`
-  max-width: var(--max-width-large);
   margin: 0 auto;
-  padding: var(--huge) 0;
+  padding: var(--big);
   display: grid;
-  grid-template-columns: repeat(3, 28%);
-  align-items: start;
-  grid-column-gap: calc(var(--xxl) + 1vw);
+  grid-row-gap: var(--big);
+
+  @media(min-width: 768px) {
+    max-width: var(--max-width-large);
+    grid-template-columns: repeat(3, 32%);
+    align-items: start;
+    grid-column-gap: var(--small);
+    grid-row-gap: 0;
+  }
+
+  @media(min-width: 1200px) {
+    padding: var(--huge) var(--big);
+    grid-template-columns: repeat(3, 28%);
+    grid-column-gap: calc(var(--xxl) + 1vw);
+  }
 `
 
 const Benefits = (props) => {

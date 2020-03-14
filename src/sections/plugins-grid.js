@@ -39,10 +39,17 @@ const plugins = [
 
 const PluginsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 25.2vh);
+  grid-template-columns: repeat(2, 42%);
   align-items: center;
+  justify-content: center;
   grid-column-gap: var(--medium);
   grid-row-gap: var(--medium);
+
+  @media(min-width: 1200px) {
+    grid-template-columns: repeat(3, 30%);
+    grid-column-gap: var(--big);
+    grid-row-gap: var(--big);
+  }  
 `
 
 const PluginsGrid = (props) => {

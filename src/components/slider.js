@@ -17,9 +17,19 @@ const SliderContainer = styled.div`
   position: relative;
   color: ${props => props.theme.color};
   display: grid;
-  grid-template-columns: 9vw 36vw 19vw;
-  grid-template-areas: "nav content footer";
+  grid-template-columns: 1vw 38vw 63vw;
+  grid-template-areas: ". content footer";
   align-items: center;
+
+  @media(min-width: 768px) {
+    grid-template-columns: 9vw 36vw 19vw;
+    grid-template-areas: "nav content footer";
+  }
+
+  @media(min-width: 1200px) {
+    grid-template-columns: 9vw 36vw 19vw;
+    grid-template-areas: "nav content footer";
+  }
 
   .react-multi-carousel-list {
     background: ${props => props.theme.background};

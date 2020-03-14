@@ -4,7 +4,11 @@ import styled from 'styled-components';
 const FooterNavContainer = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 45%);
-  grid-column-gap: var(--xxl);
+  grid-column-gap: var(--small);
+
+  @media(min-width: 768px) {
+    grid-column-gap: var(--xxl);
+  } 
 `
 const FooterNav = ({ props }) => {
   return (

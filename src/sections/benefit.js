@@ -2,10 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BenefitContainer = styled.div`
-  min-height: 52vh;
   background: var(--light-gray);
   box-shadow: 1px 2px 5px 1px #ddd;
   padding: var(--medium);
+
+  @media(min-width: 768px) {
+    min-height: 52vh;
+  }
 `
 
 const Heading = styled.div`

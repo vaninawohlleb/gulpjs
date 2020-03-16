@@ -9,8 +9,8 @@ import beer from '../assets/beer.svg';
 const BackersGridContainer = styled.div`
   margin-top: var(--big);
   display: grid;
-  grid-row-gap: var(--big);
-  
+  grid-row-gap: var(--large);
+
   @media(min-width: 768px) {
     grid-template-columns: repeat(3, 26%);
     grid-column-gap: var(--huge);

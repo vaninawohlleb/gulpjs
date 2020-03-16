@@ -17,8 +17,8 @@ const SliderContainer = styled.div`
   position: relative;
   color: ${props => props.theme.color};
   display: grid;
-  grid-template-columns: 1vw 38vw 63vw;
-  grid-template-areas: ". content footer";
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "footer footer" "content nav";
   align-items: center;
 
   @media(min-width: 768px) {
@@ -97,7 +97,15 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 5
-  }
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 4,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 5,
+  },
 }
 
 const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {

@@ -28,7 +28,7 @@ const Nav = (props) => {
     console.log(isMobile);
     return (
       <Menu> 
-        HKJAHADHADHADKJHDK
+        MOBILE
         {/* <li className="uppercase">get started</li>
         <li className="uppercase">plugins</li>
         <li className="uppercase">api</li>

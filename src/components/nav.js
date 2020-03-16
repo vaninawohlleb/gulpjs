@@ -24,7 +24,7 @@ const NavigationContainer = styled.ul`
 
 `
 const Nav = (props) => {
-  if(!isMobile) {
+  if(isMobile) {
     console.log(isMobile);
     return (
       <Menu> 

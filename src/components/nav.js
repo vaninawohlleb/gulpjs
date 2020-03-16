@@ -28,12 +28,11 @@ const Nav = (props) => {
     console.log(isMobile);
     return (
       <Menu> 
-        MOBILE
-        {/* <li className="uppercase">get started</li>
+        <li className="uppercase">get started</li>
         <li className="uppercase">plugins</li>
         <li className="uppercase">api</li>
         <li className="uppercase">donate</li>
-        <li className='uppercase button-like'>enterprise</li> */}
+        <li className='uppercase button-like'>enterprise</li>
       </Menu>
     )
   } return (

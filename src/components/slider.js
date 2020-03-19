@@ -17,18 +17,18 @@ const SliderContainer = styled.div`
   position: relative;
   color: ${props => props.theme.color};
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-areas: "footer footer" "content nav";
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "footer footer" "nav content";
   align-items: center;
 
   @media(min-width: 768px) {
-    grid-template-columns: 9vw 36vw 19vw;
+    width: 100vw;
+    grid-template-columns: 15% 41% 41%;
     grid-template-areas: "nav content footer";
   }
 
   @media(min-width: 1200px) {
-    grid-template-columns: 9vw 36vw 19vw;
-    grid-template-areas: "nav content footer";
+    grid-template-columns: 8% 37% 30%;
   }
 
   .react-multi-carousel-list {

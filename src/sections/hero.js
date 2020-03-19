@@ -11,6 +11,7 @@ const HeroContainer = styled.div`
   margin: 0 auto;
   padding: var(--big);
   align-items: center;
+  min-height: 65vh;
 
   img {
     max-width: 100%;
@@ -41,11 +42,7 @@ const HeroText = styled.div`
   }
 `
 const HeroAnimation = styled.div`
-  display: none;
 
-  @media(min-width: 768px) {
-    display: block;
-  }
 `
 
 const ViewSource = styled.div`

@@ -105,6 +105,32 @@ const Header = styled.header`
   padding: var(--tiny) var(--big);
   display: grid;
   grid-template-columns: 10% 80% 10%;
+  grid-template-areas: "logo . burger";
+  align-items: center;
+
+  @media(min-width: 768px) {
+    grid-template-areas: "logo nav burger";
+  }
+
+  .bm-item-list {
+    background: white;
+    padding: var(--small);
+    grid-area: nav;
+
+    > li {
+      outline: none;
+      padding: var(--tiny) 0;
+    }
+  }
+
+  > div {
+    grid-area: burger;
+  }
+  
+  .bm-burger-button {
+    width: 80%;
+    margin-top: 25%;
+  }
 `
 
 const Main = styled.main`

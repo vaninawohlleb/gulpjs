@@ -1,4 +1,8 @@
 import React from 'react';
+
+import styled, { createGlobalStyle } from 'styled-components';
+import { isMobile } from 'react-device-detect';
+
 import Logo from 'components/logo';
 import Nav from 'components/nav';
 import Socials from 'components/socials';
@@ -8,7 +12,6 @@ import Hero from 'sections/hero';
 import Benefits from 'sections/benefits';
 import Plugins from 'sections/plugins';
 import Backers from 'sections/backers';
-import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -154,7 +157,9 @@ function App() {
       <Header>
         <Logo />
         <Nav />
-        <Socials />
+        {!isMobile &&
+          <Socials />
+        }
       </Header>
       <Main>
         <Hero />

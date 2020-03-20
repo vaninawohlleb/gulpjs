@@ -80,7 +80,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: calc(2.53rem + .1vw);
+    font-size: calc(2.2rem + .1vw);
     line-height: calc(3rem + .2vw);
   }
 
@@ -127,9 +127,14 @@ const Header = styled.header`
     grid-area: burger;
   }
   
-  .bm-burger-button {
-    width: 80%;
-    margin-top: 25%;
+  .bm-menu-wrap {
+    width: 100%;
+    top: 0;
+    color: var(--purple);
+  }
+
+  .bm-cross-button {
+    margin: var(--tiny);
   }
 `
 
@@ -143,7 +148,8 @@ const Footer = styled.footer`
   position: relative;
   padding: var(--big);
   display: grid;
-  grid-template-areas: "first last";
+  grid-template-areas: "first ."
+    ". last";
   grid-template-columns: 50% 50%;
 
   @media(min-width: 768px) {
@@ -163,17 +169,15 @@ const Footer = styled.footer`
   > a {
     grid-area: last;
     text-align: end;
-    margin-top: var(--big);
-
-    @media(min-width: 768px) {
-      margin-top: 0;
-    }
   }
 `
 
 const GreyContainer = styled.div`
   display: block;
-  background: var(--light-gray);
+
+  @media(min-width: 768px) {
+    background: var(--light-gray);
+  }
 `
 
 function App() {

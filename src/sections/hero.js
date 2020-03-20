@@ -37,6 +37,7 @@ const HeroText = styled.div`
 
   > div {
     display: grid;
+    align-items: center;
     grid-template-columns: 20% 75%;
     grid-column-gap: var(--big);
   }

@@ -39,7 +39,7 @@ const plugins = [
 
 const PluginsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 42%);
+  grid-template-columns: repeat(2, 168px);
   align-items: center;
   justify-content: center;
   grid-column-gap: var(--medium);

@@ -4,8 +4,8 @@ import { isMobile } from 'react-device-detect';
 
 const DonateContainer = styled.div`
   display: grid;
-  grid-template-columns: 30% 60%;
-  grid-column-gap: var(--big);
+  grid-template-columns: 35% 60%;
+  grid-column-gap: var(--medium);
   align-items: center;
   grid-area: footer;
 

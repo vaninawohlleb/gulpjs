@@ -12,7 +12,7 @@ const BackersContainer = styled.div`
     align-items: center;
   }
 
-  @media(min-width: 1024x) {
+  @media(min-width: 1200px) {
     padding: var(--huge) var(--big);
     max-width: var(--max-width-large);
     grid-template-columns: 31% 62%;

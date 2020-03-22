@@ -2,10 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
 
-import Button from '../components/button';
-import GulpGraph from '../components/graph';
-import GulpSource from '../components/source';
 import cupLogo from '../assets/gulp-2x.png';
+import HeroAnimation from '../components/hero-animation';
 
 const HeroContainer = styled.div`
   margin: 0 auto;
@@ -22,7 +20,7 @@ const HeroContainer = styled.div`
     max-width: var(--max-width-mid);
   }
 
-  @media(min-width: 1200px) {
+  @media(min-width: 1024px) {
     max-width: var(--max-width-large);
     display: grid;
     grid-template-columns: 44% 49%;
@@ -42,14 +40,6 @@ const HeroText = styled.div`
     grid-column-gap: var(--big);
   }
 `
-const HeroAnimation = styled.div`
-
-`
-
-const ViewSource = styled.div`
-  margin-bottom: var(--medium);
-  text-align: right;
-`
 
 const Hero = (props) => {
   return (
@@ -66,13 +56,7 @@ const Hero = (props) => {
         <p>Gulp is a toolkit for automating painful or time-consuming tasks in your development workflow, so you can stop messing around and build something.</p>
       </HeroText>
       {!isMobile &&
-        <HeroAnimation>
-          <ViewSource>
-            <Button title='View Source'/>
-          </ViewSource>
-          <GulpGraph />
-          {/* <GulpSource /> */}
-        </HeroAnimation>
+        <HeroAnimation />
       }
     </HeroContainer>
   )

@@ -34,6 +34,7 @@ const theme = {
 }
 
 const Button = (props) => {
+  console.log(props)
   if(!props.themed) {
     return (
       <ButtonContainer>

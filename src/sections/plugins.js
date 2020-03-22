@@ -18,8 +18,8 @@ const PluginContainer = styled.div`
   @media(min-width: 1200px) {
     padding: var(--huge) var(--big);
     max-width: var(--max-width-large);
-    grid-template-columns: 30% 54%;
-    grid-column-gap: var(--max-width-tiny);
+    grid-template-columns: 30% 58%;
+    grid-column-gap: var(--max);
   }
 
   h3 {

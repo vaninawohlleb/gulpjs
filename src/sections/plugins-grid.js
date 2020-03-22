@@ -46,7 +46,7 @@ const PluginsContainer = styled.div`
   grid-row-gap: var(--medium);
 
   @media(min-width: 1200px) {
-    grid-template-columns: repeat(3, 30%);
+    grid-template-columns: repeat(3, 184px);
     grid-column-gap: var(--big);
     grid-row-gap: var(--big);
   }  

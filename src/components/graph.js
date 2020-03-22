@@ -28,7 +28,7 @@ const opacity = keyframes`
   }
 `
 
-const StyledGulp = styled(GulpVisual)` 
+const VisualGulp = styled(GulpVisual)` 
   width: 100%;
   height: 100%;
 
@@ -47,10 +47,46 @@ const StyledGulp = styled(GulpVisual)`
       animation-delay: .4s;
     }
   }
-` 
+`
+
+const TechList = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(3, 26%);
+  grid-column-gap: var(--big);
+`
 const Graph = (props) => {
   return (
-    <StyledGulp />
+    <div>
+      {/* <TechList>
+        <li>
+          <p className="uppercase">pug</p>
+          <p>or any otehr templating language that iutputs HTML</p>
+        </li>
+        <li>
+          <p className="uppercase">sass</p>
+          <p>or any otehr templating language that iutputs HTML</p>
+        </li>
+        <li>
+          <p className="uppercase">js</p>
+          <p>or any otehr templating language that iutputs HTML</p>
+        </li>
+      </TechList> */}
+      <VisualGulp />
+      {/* <TechList>
+        <li>
+          <p className="uppercase">html</p>
+          <p>or any otehr templating language that iutputs HTML</p>
+        </li>
+        <li>
+          <p className="uppercase">css</p>
+          <p>or any otehr templating language that iutputs HTML</p>
+        </li>
+        <li>
+          <p className="uppercase">js</p>
+          <p>or any otehr templating language that iutputs HTML</p>
+        </li>
+      </TechList> */}
+    </div>
   )
 }
 

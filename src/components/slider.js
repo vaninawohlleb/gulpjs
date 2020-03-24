@@ -124,6 +124,7 @@ const Slider = (props) => {
       <SliderContainer>
         <Carousel 
           responsive={responsive}
+          draggable={false}
           arrows={false}
           infinite={true}
           renderButtonGroupOutside={true} 

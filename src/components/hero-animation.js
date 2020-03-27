@@ -1,11 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Transition } from 'react-transition-group';
 
-import Button from './button';
 import GulpGraph from './graph';
 import GulpSource from './source';
 
-const AnimationContainer = styled.div``
+const AnimationContainer = styled.div`
+
+  .fade-entering, .fade-exiting {
+    opacity: 1%;
+  }
+
+  .fade-entered {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .fade-exited  {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+`
 
 const ViewSource = styled.div`
   margin-bottom: var(--medium);
@@ -14,19 +29,20 @@ const ViewSource = styled.div`
 
 const ButtonFancy = styled.button`
   background: white;
-  padding: var(--tiny) var(--big);
+  padding: var(--small) var(--big);
   outline: none;
   max-width: 50%;
 
   color: var(--purple);
   border: 2px solid var(--purple);
-  box-shadow: 6px 6px 0 1px var(--purple);
-
-  transition: box-shadow .2s ease-in;
+  box-shadow: 7px 7px 0 2px var(--purple);
+  transition: box-shadow .1s ease-in, transform .1s ease-in;
 
   &:hover {
-    box-shadow: 6px 6px 0 -1px var(--purple);
-    transition: box-shadow .2s ease-in;
+    outline: none;
+    transform: translate(2px, 10%);
+    box-shadow: 6px 6px 0 0 var(--purple);
+    transition: box-shadow .1s ease-in, transform .1s ease-in;
   }
 
   @media(min-width: 768px) {
@@ -54,7 +70,11 @@ class Animation extends React.Component {
               <span className="uppercase">{this.state.viewSource ? "Close Source" : "View Source"}</span>
             </ButtonFancy> 
         </ViewSource>
-        {this.state.viewSource ?  <GulpSource />  :  <GulpGraph /> }
+          <Transition in={!this.state.viewSource} timeout={{appear: 50, enter: 50, exit: 50}}>
+            {state => (
+              <div className={`fade fade-${state}`}>{this.state.viewSource ? <GulpSource /> : <GulpGraph />}</div>
+            )}
+          </Transition>
       </AnimationContainer>
     )
   } 

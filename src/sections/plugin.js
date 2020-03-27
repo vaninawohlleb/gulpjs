@@ -10,6 +10,15 @@ const PluginContainer = styled.div`
   flex-direction: column;
   justify-items: center;
 
+  @media(min-width: 768px) {
+    transition: box-shadow .2s ease-in;
+
+    &:hover {
+      box-shadow: 4px 5px 7px 3px #ddd;
+      transition: box-shadow .2s ease-in;
+    }
+  }
+
   @media(min-width: 1200px) {
     padding: var(--medium) var(--small);
   }

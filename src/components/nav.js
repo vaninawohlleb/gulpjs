@@ -9,10 +9,14 @@ import close from '../assets/close.svg';
 const NavigationContainer = styled.ul`
   font-family: var(--heading-text);
   color: white;
-  display: grid;
-  grid-template-columns: var(--hugest) var(--xxl) var(--large) var(--xxl) var(--hugest);
-  grid-column-gap: var(--small);
-  align-items: center;
+  display: none;
+
+  @media(min-width: 768px) {
+    display: grid;
+    grid-template-columns: var(--hugest) var(--xxl) var(--large) var(--xxl) var(--hugest);
+    grid-column-gap: var(--small);
+    align-items: center;
+  }
 
   li {
     text-align: center;

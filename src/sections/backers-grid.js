@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Tier from './tier';
+import Tier from './backer';
 
 import bat from '../assets/bat.svg';
 import rocket from '../assets/rocket.svg';

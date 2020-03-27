@@ -7,15 +7,16 @@ const ButtonContainer = styled.button`
   outline: none;
   max-width: 50%;
 
-  color: ${props => props.theme.main};
-  border: 2px solid ${props => props.theme.main};
-  box-shadow: 6px 6px 0 1px ${props => props.theme.main};
-
-  transition: box-shadow .2s ease-in;
+  color: var(--purple);
+  border: 2px solid var(--purple);
+  box-shadow: 7px 7px 0 2px var(--purple);
+  transition: box-shadow .1s ease-in, transform .1s ease-in;
 
   &:hover {
-    box-shadow: 6px 6px 0 -1px ${props => props.theme.main};
-    transition: box-shadow .2s ease-in;
+    outline: none;
+    transform: translate(2px, 10%);
+    box-shadow: 6px 6px 0 0 var(--purple);
+    transition: box-shadow .1s ease-in, transform .1s ease-in;
   }
 
   @media(min-width: 768px) {
@@ -23,30 +24,11 @@ const ButtonContainer = styled.button`
   }
 `
 
-ButtonContainer.defaultProps = {
-  theme: {
-    main: 'var(--purple)'
-  }
-}
-
-const theme = {
-  main: 'var(--red)'
-}
-
 const Button = (props) => {
-  console.log(props)
-  if(!props.themed) {
-    return (
-      <ButtonContainer>
-        <span className="uppercase">{props.title}</span>
-      </ButtonContainer>
-    )
-  } return (
-    <ThemeProvider theme={theme}>
-      <ButtonContainer>
-        <span className="uppercase">{props.title}</span>
-      </ButtonContainer>
-    </ThemeProvider>
+  return (
+    <ButtonContainer>
+      <span className="uppercase">{props.title}</span>
+    </ButtonContainer>
   )
 }
 

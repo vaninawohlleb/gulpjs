@@ -144,6 +144,7 @@ const Slider = (props) => {
         <Carousel 
           responsive={responsive}
           arrows={false}
+          draggable={false}
           infinite={true}
           renderButtonGroupOutside={true} 
           customButtonGroup={<ButtonGroup />}>

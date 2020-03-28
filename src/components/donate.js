@@ -29,6 +29,7 @@ const DonateContainer = styled.div`
     min-height: 18vh;
     padding: 0 var(--medium);
     align-content: center;
+    cursor: pointer;
     transition: box-shadow .1s ease-in, transform .1s ease-in;
 
     &:hover {

@@ -6,6 +6,7 @@ const ButtonContainer = styled.button`
   padding: var(--tiny) var(--big);
   outline: none;
   max-width: 50%;
+  cursor: pointer;
 
   color: var(--purple);
   border: 2px solid var(--purple);

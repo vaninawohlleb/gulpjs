@@ -5,14 +5,18 @@ import twitter from '../assets/twitter.svg';
 import medium from '../assets/medium.svg';
 
 const SocialsContainer = styled.ul`
-  display: flex;
-  flex-directon: row;
-  align-items: center;
-  justify-content: flex-end;
+  display: none;
 
-  > li {
-    position: relative;
-    margin: var(--tiny);
+  @media(min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    > li {
+      position: relative;
+      margin: var(--tiny);
+    }
   }
 `
 const Socials = ({ props }) => {

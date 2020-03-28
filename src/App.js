@@ -1,4 +1,8 @@
 import React from 'react';
+
+import styled, { createGlobalStyle } from 'styled-components';
+import { isMobile } from 'react-device-detect';
+
 import Logo from 'components/logo';
 import Nav from 'components/nav';
 import Socials from 'components/socials';
@@ -8,7 +12,6 @@ import Hero from 'sections/hero';
 import Benefits from 'sections/benefits';
 import Plugins from 'sections/plugins';
 import Backers from 'sections/backers';
-import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -77,7 +80,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: calc(2.53rem + .1vw);
+    font-size: calc(2.2rem + .1vw);
     line-height: calc(3rem + .2vw);
   }
 
@@ -102,6 +105,37 @@ const Header = styled.header`
   padding: var(--tiny) var(--big);
   display: grid;
   grid-template-columns: 10% 80% 10%;
+  grid-template-areas: "logo . burger";
+  align-items: center;
+
+  @media(min-width: 768px) {
+    grid-template-areas: "logo nav burger";
+  }
+
+  .bm-item-list {
+    background: white;
+    padding: var(--small);
+    grid-area: nav;
+
+    > li {
+      outline: none;
+      padding: var(--tiny) 0;
+    }
+  }
+
+  > div {
+    grid-area: burger;
+  }
+  
+  .bm-menu-wrap {
+    width: 100%;
+    top: 0;
+    color: var(--purple);
+  }
+
+  .bm-cross-button {
+    margin: var(--tiny);
+  }
 `
 
 const Main = styled.main`
@@ -114,7 +148,8 @@ const Footer = styled.footer`
   position: relative;
   padding: var(--big);
   display: grid;
-  grid-template-areas: "first last";
+  grid-template-areas: "first ."
+    ". last";
   grid-template-columns: 50% 50%;
 
   @media(min-width: 768px) {
@@ -134,17 +169,15 @@ const Footer = styled.footer`
   > a {
     grid-area: last;
     text-align: end;
-    margin-top: var(--big);
-
-    @media(min-width: 768px) {
-      margin-top: 0;
-    }
   }
 `
 
 const GreyContainer = styled.div`
   display: block;
-  background: var(--light-gray);
+
+  @media(min-width: 768px) {
+    background: var(--light-gray);
+  }
 `
 
 function App() {
@@ -154,7 +187,9 @@ function App() {
       <Header>
         <Logo />
         <Nav />
-        <Socials />
+        {!isMobile &&
+          <Socials />
+        }
       </Header>
       <Main>
         <Hero />

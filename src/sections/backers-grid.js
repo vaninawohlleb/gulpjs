@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Tier from './tier';
+import Tier from './backer';
 
 import bat from '../assets/bat.svg';
 import rocket from '../assets/rocket.svg';
@@ -9,8 +9,8 @@ import beer from '../assets/beer.svg';
 const BackersGridContainer = styled.div`
   margin-top: var(--big);
   display: grid;
-  grid-row-gap: var(--big);
-  
+  grid-row-gap: var(--large);
+
   @media(min-width: 768px) {
     grid-template-columns: repeat(3, 26%);
     grid-column-gap: var(--huge);

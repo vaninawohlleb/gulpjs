@@ -17,18 +17,18 @@ const SliderContainer = styled.div`
   position: relative;
   color: ${props => props.theme.color};
   display: grid;
-  grid-template-columns: 1vw 38vw 63vw;
-  grid-template-areas: ". content footer";
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "footer footer" "nav content";
   align-items: center;
 
   @media(min-width: 768px) {
-    grid-template-columns: 9vw 36vw 19vw;
+    width: 100vw;
+    grid-template-columns: 15% 41% 41%;
     grid-template-areas: "nav content footer";
   }
 
   @media(min-width: 1200px) {
-    grid-template-columns: 9vw 36vw 19vw;
-    grid-template-areas: "nav content footer";
+    grid-template-columns: 8% 37% 30%;
   }
 
   .react-multi-carousel-list {
@@ -97,7 +97,15 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 5
-  }
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 4,
+  },
+  mobile: {
+    breakpoint: { max: 520, min: 0 },
+    items: 3,
+  },
 }
 
 const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
@@ -116,6 +124,7 @@ const Slider = (props) => {
       <SliderContainer>
         <Carousel 
           responsive={responsive}
+          draggable={false}
           arrows={false}
           infinite={true}
           renderButtonGroupOutside={true} 
@@ -135,6 +144,7 @@ const Slider = (props) => {
         <Carousel 
           responsive={responsive}
           arrows={false}
+          draggable={false}
           infinite={true}
           renderButtonGroupOutside={true} 
           customButtonGroup={<ButtonGroup />}>

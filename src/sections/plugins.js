@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PluginsGrid from './plugins-grid';
+import { isMobile } from 'react-device-detect';
 
 const PluginContainer = styled.div`
   margin: 0 auto;
@@ -17,8 +18,8 @@ const PluginContainer = styled.div`
   @media(min-width: 1200px) {
     padding: var(--huge) var(--big);
     max-width: var(--max-width-large);
-    grid-template-columns: 30% 54%;
-    grid-column-gap: var(--max-width-tiny);
+    grid-template-columns: 30% 58%;
+    grid-column-gap: var(--max);
   }
 
   h3 {
@@ -39,11 +40,8 @@ const PluginText = styled.div`
   }
 
   p {
-    margin-bottom: 0;
-    display: none;
-
     @media(min-width: 768px) {
-      display: block;
+      margin-bottom: 0;
     }
   }
 `
@@ -53,7 +51,9 @@ const Plugins = ({ props }) => {
     <PluginContainer>
       <PluginText>
         <h3>Plugins for the most popular tech</h3>
-        <p>By preferring code over configuration, node best practices, and a minimal API surface - gulp makes things simple like never before. By preferring code over configuration, node best practices, and a minimal API surface - gulp makes things simple like never before. By preferring code over configuration, node best practices, and a minimal API surface - gulp makes things simple like never before.</p>
+        {!isMobile &&
+          <p>By preferring code over configuration, node best practices, and a minimal API surface - gulp makes things simple like never before. By preferring code over configuration, node best practices, and a minimal API surface - gulp makes things simple like never before. By preferring code over configuration, node best practices, and a minimal API surface - gulp makes things simple like never before.</p>
+        }
       </PluginText>
       <PluginsGrid />
     </PluginContainer>

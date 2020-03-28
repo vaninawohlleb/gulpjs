@@ -6,7 +6,6 @@ import GulpGraph from './graph';
 import GulpSource from './source';
 
 const AnimationContainer = styled.div`
-
   .fade-entering, .fade-exiting {
     opacity: 1%;
   }

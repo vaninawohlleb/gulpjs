@@ -8,12 +8,12 @@ const BenefitContainer = styled.div`
 
   @media(min-width: 768px) {
     min-height: 52vh;
-    transition: box-shadow .2s ease-in;
+    // transition: box-shadow .2s ease-in;
 
-    &:hover {
-      box-shadow: 4px 5px 7px 3px #ddd;
-      transition: box-shadow .2s ease-in;
-    }
+    // &:hover {
+    //   box-shadow: 4px 5px 7px 3px #ddd;
+    //   transition: box-shadow .2s ease-in;
+    // }
   }
 `
 

@@ -2,48 +2,52 @@ import React from 'react';
 import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
 
-const DonateContainer = styled.div`
-  .donate-small {
-    display: grid;
-    grid-template-columns: 35% 60%;
-    grid-column-gap: var(--medium);
-    align-items: center;
-    grid-area: footer;
+const DonateContainerMobile = styled.div`
+  display: grid;
+  grid-template-columns: 35% 60%;
+  grid-column-gap: var(--medium);
+  align-items: center;
+  grid-area: footer;
 
-    a {
-      background: var(--red);
-      padding: var(--tiny) 0;
-      text-align: center;
+  a {
+    background: var(--red);
+    padding: var(--tiny) 0;
+    text-align: center;
+    color: white;
+  }
+
+  p {
+    color: var(--black);
+  }
+`
+const DonateContainer = styled.div`  
+  .donate-big {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 37% 37%;
+    background: var(--red);
+    min-height: 18vh;
+    padding: 0 var(--medium);
+    align-content: center;
+    transition: box-shadow .1s ease-in, transform .1s ease-in;
+
+    &:hover {
+      transform: translate(5px, -5%);
+      box-shadow: -7px 7px 0 3px var(--black);
+      transition: box-shadow .1s ease-in, transform .1s ease-in;
+    }
+
+    h2 {
+      margin: 0;
+      align-self: center;
       color: white;
     }
 
     p {
-      color: var(--black);
-    }
-  }
-  
-  .donate-big {
-    display: none;
-
-    @media(min-width: 768px) {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 37% 37%;
-      background: var(--red);
-      min-height: 18vh;
-      padding: 0 var(--medium);
-      align-content: center;
-
-      h2 {
-        margin: 0;
-        align-self: center;
-      }
-
-      p {
-        color: white;
-        margin: 0;
-        align-self: flex-start;
-      }
+      color: white;
+      margin: 0;
+      align-self: flex-start;
+      font-family: var(--body-text);
     }
   }
 `
@@ -51,19 +55,17 @@ const DonateContainer = styled.div`
 const Donate = (props) => {
   if(isMobile) {
     return (
-      <DonateContainer>
-        <div className="div-small">
-          <a href="/"><h2>Donate</h2></a>
-          <p>For companies wanting to support open source</p>
-        </div>
-      </DonateContainer>
+      <DonateContainerMobile>
+        <a href="/"><h2>Donate</h2></a>
+        <p>For companies wanting to support open source</p>
+      </DonateContainerMobile>
     )
     } return (
       <DonateContainer>
-        <div className="donate-big">
+        <a href="/" className="donate-big">
           <h2>Donate</h2>
           <p>For companies wanting to support open source</p>
-        </div>
+        </a>
       </DonateContainer>
     )
 }

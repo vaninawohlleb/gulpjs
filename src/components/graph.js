@@ -76,6 +76,7 @@ const TechList = styled.ul`
 
   .uppercase {
     margin: 0;
+    color: var(--red);
   }
 `
 const Graph = (props) => {

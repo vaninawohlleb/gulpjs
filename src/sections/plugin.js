@@ -11,11 +11,13 @@ const PluginContainer = styled.div`
   justify-items: center;
 
   @media(min-width: 768px) {
-    transition: box-shadow .2s ease-in;
+    transform: scale(0.95);
+    transition: box-shadow .2s ease-in, transform .2s ease-in;
 
     &:hover {
-      box-shadow: 4px 5px 7px 3px #ddd;
-      transition: box-shadow .2s ease-in;
+      transform: scale(1);
+      box-shadow: 6px 7px 8px 5px #ddd;
+      transition: box-shadow .2s ease-in, transform .2s ease-in;
     }
   }
 

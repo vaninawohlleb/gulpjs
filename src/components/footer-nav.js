@@ -14,13 +14,15 @@ const FooterNav = ({ props }) => {
   return (
     <FooterNavContainer>
       <ul>
-        <li>Github issues</li>
-        <li>Roadmap</li>
-        <li>Stack Overflow</li>
-      </ul>
-      <ul>
-        <li>twitter</li>
-        <li>blog</li>
+        <li>
+          <a href="https://github.com/gulpjs/gulp">Github</a>
+        </li>
+        <li>
+          <a href="https://twitter.com/gulpjs">twitter</a>
+        </li>
+        <li>
+          <a href="https://medium.com/gulpjs">blog</a>
+        </li>
         <li>hello@gulpjs.com</li>
       </ul>
     </FooterNavContainer>

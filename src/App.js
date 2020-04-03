@@ -144,22 +144,25 @@ const Main = styled.main`
 
 const Footer = styled.footer`
   background: var(--purple);
-  color: white;
   position: relative;
   padding: var(--big);
   display: grid;
-  grid-template-areas: "first ."
-    ". last";
+  grid-template-areas: "first last";
   grid-template-columns: 50% 50%;
 
-  @media(min-width: 768px) {
-    grid-template-columns: 20% 45% 20%;
-    grid-template-areas: ". first last";
-    grid-column-gap: var(--big);
+  a, li {
+    color: white;
+    font-family: var(--body-text);
   }
 
-  @media(min-width: 1200px) {
+  a {
+    cursor: pointer;
+  }
+
+  @media(min-width: 768px) {
     grid-template-columns: 56% 30% 10%;
+    grid-template-areas: ". first last";
+    grid-column-gap: var(--big);
   }
 
   > ul {
@@ -169,6 +172,8 @@ const Footer = styled.footer`
   > a {
     grid-area: last;
     text-align: end;
+    align-self: end;
+    margin: var(--small);
   }
 `
 

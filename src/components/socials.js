@@ -17,13 +17,16 @@ const SocialsContainer = styled.ul`
       position: relative;
       margin: var(--tiny);
     }
+    a {
+      cursor: pointer;
+    }
   }
 `
 const Socials = ({ props }) => {
   return (
     <SocialsContainer>
-      <li><a href="/"><img src={twitter} alt="twitter" /></a></li>
-      <li><a href="/"><img src={medium} alt="medium" /></a></li>
+      <li><a href="https://twitter.com/gulpjs"><img src={twitter} alt="twitter" /></a></li>
+      <li><a href="https://medium.com/gulpjs"><img src={medium} alt="medium" /></a></li>
     </SocialsContainer>
   )
 }

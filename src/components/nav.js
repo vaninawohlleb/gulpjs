@@ -6,8 +6,36 @@ import { slide as Menu } from 'react-burger-menu';
 import burger from '../assets/burger.svg';
 import close from '../assets/close.svg';
 
+const links = [
+  {
+    title: 'get started',
+    link: 'https://gulpjs.com/docs/en/getting-started/quick-start',
+    class: 'uppercase'
+  },
+  {
+    title: 'plugins',
+    link: 'https://gulpjs.com/plugins/',
+    class: 'uppercase'
+  },
+  {
+    title: 'api',
+    link: 'https://gulpjs.com/docs/en/api/concepts',
+    class: 'uppercase'
+  },
+  {
+    title: 'donate',
+    link: 'https://opencollective.com/gulpjs',
+    class: 'uppercase'
+  },
+  {
+    title: 'enterprise',
+    link: 'https://opencollective.com/gulpjs/contribute/company-1033/checkout',
+    class: 'uppercase button-like'
+  }
+];
+
 const NavigationContainer = styled.ul`
-  font-family: var(--heading-text);
+  font-family: var(--body-text);
   color: white;
   display: none;
 
@@ -20,13 +48,17 @@ const NavigationContainer = styled.ul`
 
   li {
     text-align: center;
+  }
+
+  a {
+    color: white;
+    cursor: pointer;
 
     &.button-like {
       padding: var(--tiny);
       border: 2px solid white;
     }
   }
-
 `
 const Nav = (props) => {
   if(isMobile) {
@@ -34,20 +66,18 @@ const Nav = (props) => {
       <Menu right noOverlay width="100%" 
       customBurgerIcon={ <img src={burger} alt="burger" /> }
       customCrossIcon={ <img src={close} alt="close"/> }>
-        <li className="uppercase">get started</li>
-        <li className="uppercase">plugins</li>
-        <li className="uppercase">api</li>
-        <li className="uppercase">donate</li>
-        <li className='uppercase button-like'>enterprise</li>
+      {links.map((link, index) => 
+      <li key={index}>
+        <a href={link.link} className={link.class}>{link.title}</a>
+      </li>)}
       </Menu>
     )
   } return (
     <NavigationContainer>
-      <li className="uppercase">get started</li>
-      <li className="uppercase">plugins</li>
-      <li className="uppercase">api</li>
-      <li className="uppercase">donate</li>
-      <li className='uppercase button-like'>enterprise</li>
+      {links.map((link, index) => 
+      <li key={index}>
+        <a href={link.link} className={link.class}>{link.title}</a>
+      </li>)}
     </NavigationContainer>
   )
 }
